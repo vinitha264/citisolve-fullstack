@@ -16,14 +16,12 @@
     align-items: center;
 }
 
-/* LEFT */
 .navbar-left {
     flex: 1;
     display: flex;
     align-items: center;
 }
 
-/* CENTER */
 .navbar-center {
     flex: 1;
     display: flex;
@@ -31,7 +29,6 @@
     gap: 30px;
 }
 
-/* RIGHT */
 .navbar-right {
     flex: 1;
     display: flex;
@@ -40,7 +37,6 @@
     gap: 15px;
 }
 
-/* Logo */
 .logo h1 {
     font-size: 1.6rem;
     font-weight: bold;
@@ -49,7 +45,6 @@
     letter-spacing: 1px;
 }
 
-/* Links */
 .navbar a {
     text-decoration: none;
     color: black;
@@ -61,14 +56,12 @@
     color: #6c63ff;
 }
 
-/* Welcome Text */
 .navbar p {
     margin: 0;
     font-weight: 600;
     color: black;
 }
 
-/* Logout Button */
 .navbar button {
     padding: 6px 14px;
     border: none;
@@ -84,8 +77,6 @@
     background-color: #f43d3d;
     transform: translateY(-2px);
 }
-
-/* Login/Register Button */
 .nav-btn {
     padding: 6px 14px;
     background-color: #6c63ff;
@@ -99,8 +90,6 @@
     background-color: #574fd6;
     transform: translateY(-2px);
 }
-
-/* Responsive */
 @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;
