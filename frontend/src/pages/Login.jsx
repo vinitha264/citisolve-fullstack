@@ -52,12 +52,10 @@ const Login = () => {
         setLoading(true);
 
         try {
-            //Call backend login API
             const response = await authAPI.login(loginData);
 
             console.log("Login successful:", response);
 
-            //Save user in context (important for navbar update)
             login({
                 name: response.name,
                 email: response.email,
