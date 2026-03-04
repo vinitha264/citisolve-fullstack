@@ -1,12 +1,7 @@
-// backend/routes/complaintRoutes.js
-
 const express = require("express");
 const router = express.Router();
 const Complaint = require("../models/Complaint");
 
-/* ===============================
-   CREATE NEW COMPLAINT
-================================ */
 router.post("/", async (req, res) => {
     try {
         const newComplaint = new Complaint(req.body);
@@ -22,9 +17,6 @@ router.post("/", async (req, res) => {
     }
 });
 
-/* ===============================
-   GET ALL COMPLAINTS
-================================ */
 router.get("/", async (req, res) => {
     try {
         const complaints = await Complaint.find().sort({ createdAt: -1 });
@@ -35,9 +27,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-/* ===============================
-   DELETE COMPLAINT
-================================ */
 router.delete("/:id", async (req, res) => {
     try {
         const deletedComplaint = await Complaint.findByIdAndDelete(req.params.id);
