@@ -1,7 +1,3 @@
-/* ===============================
-   GLOBAL PAGE BACKGROUND
-================================= */
-
 .page-bg {
     min-height: 100vh;
     background: linear-gradient(135deg, #eef2ff, #f8fafc);
@@ -9,11 +5,6 @@
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #1f2937;
 }
-
-/* ===============================
-   TITLE SECTION
-================================= */
-
 .page-title {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -27,11 +18,6 @@
     margin-bottom: 40px;
     color: #6b7280;
 }
-
-/* ===============================
-   TOP CONTROLS
-================================= */
-
 .top-controls {
     display: flex;
     justify-content: space-between;
@@ -40,9 +26,6 @@
     gap: 20px;
     align-items: center;
 }
-
-/* Filter Section */
-
 .filter-controls {
     display: flex;
     align-items: center;
@@ -70,11 +53,6 @@
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
     outline: none;
 }
-
-/* ===============================
-   PRIMARY BUTTON
-================================= */
-
 .primary-btn {
     background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: #fff;
@@ -96,19 +74,11 @@
     transform: scale(0.98);
 }
 
-/* ===============================
-   COMPLAINT GRID
-================================= */
-
 .complaint-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-
-/* ===============================
-   COMPLAINT CARD
-================================= */
 
 .complaint-card {
     background: rgba(255, 255, 255, 0.95);
@@ -124,7 +94,6 @@
     animation: fadeUp 0.5s ease forwards;
 }
 
-/* Gradient Accent Top */
 .complaint-card::before {
     content: "";
     position: absolute;
@@ -135,15 +104,10 @@
     background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
 }
 
-/* Hover Effect */
 .complaint-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
-
-/* ===============================
-   CARD HEADER
-================================= */
 
 .card-header {
     display: flex;
@@ -154,11 +118,6 @@
     font-weight: 600;
     color: #6b7280;
 }
-
-/* ===============================
-   STATUS BADGES
-================================= */
-
 .status {
     padding: 6px 16px;
     border-radius: 50px;
@@ -167,28 +126,20 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
-
-/* Pending */
 .status.pending {
     background: linear-gradient(135deg, #fff7ed, #ffedd5);
     color: #ea580c;
 }
 
-/* In Progress */
 .status.in-progress {
     background: linear-gradient(135deg, #dbeafe, #eff6ff);
     color: #2563eb;
 }
 
-/* Resolved */
 .status.resolved {
     background: linear-gradient(135deg, #dcfce7, #ecfdf5);
     color: #059669;
 }
-
-/* ===============================
-   COMPLAINT TITLE
-================================= */
 
 .complaint-name {
     font-size: 1.3rem;
@@ -196,10 +147,6 @@
     margin-bottom: 18px;
     color: #111827;
 }
-
-/* ===============================
-   ROW INFO
-================================= */
 
 .row {
     display: flex;
@@ -214,10 +161,6 @@
     font-weight: 600;
     color: #9ca3af;
 }
-
-/* ===============================
-   CATEGORY BADGE
-================================= */
 
 .category-badge {
     padding: 6px 14px;
@@ -236,10 +179,6 @@
     box-shadow: 0 6px 18px rgba(79, 70, 229, 0.15);
 }
 
-/* ===============================
-   DESCRIPTION
-================================= */
-
 .description {
     margin-top: 18px;
     font-size: 0.92rem;
@@ -248,10 +187,6 @@
     padding-top: 16px;
     border-top: 1px solid #f1f5f9;
 }
-
-/* ===============================
-   EMPTY STATE
-================================= */
 
 .empty-wrapper {
     display: flex;
@@ -292,9 +227,6 @@
     line-height: 1.5;
 }
 
-/* ===============================
-   RESPONSIVE DESIGN
-================================= */
 
 @media (max-width: 768px) {
     .page-title {
@@ -314,10 +246,6 @@
         padding: 40px 25px;
     }
 }
-
-/* ===============================
-   ANIMATION
-================================= */
 
 @keyframes fadeUp {
     from {
