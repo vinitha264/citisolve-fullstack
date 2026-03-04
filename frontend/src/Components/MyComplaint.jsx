@@ -7,7 +7,6 @@ const MyComplaint = () => {
     const [complaints, setComplaints] = useState([]);
     const [statusFilter, setStatusFilter] = useState("All");
 
-    // 🔹 Fetch complaints from backend
     useEffect(() => {
         fetch("http://localhost:5000/api/complaints")
             .then((res) => res.json())
@@ -15,7 +14,6 @@ const MyComplaint = () => {
             .catch((err) => console.log("Error fetching complaints:", err));
     }, []);
 
-    // 🔹 Delete complaint
     const handleDelete = async (id) => {
         const confirmDelete = window.confirm(
             "Are you sure you want to delete this complaint?"
@@ -30,7 +28,6 @@ const MyComplaint = () => {
                 }
             );
 
-            // Remove from UI instantly
             setComplaints((prev) =>
                 prev.filter((item) => item._id !== id)
             );
@@ -39,7 +36,6 @@ const MyComplaint = () => {
         }
     };
 
-    // 🔹 Filter logic
     const filteredComplaints =
         statusFilter === "All"
             ? complaints
