@@ -117,4 +117,31 @@ const ComplaintForm = () => {
                     <option value="Garbage Issue">Garbage Issue</option>
                     <option value="Water Issue">Water Issue</option>
                     <option value="Street Light Problem">Street Light Problem</option>
-                    
+                    <option value="Other">Other</option>
+                </select>
+                {errors.category && <p className="error">{errors.category}</p>}
+
+                <label>Description:</label>
+                <textarea
+                    name="description"
+                    placeholder="Enter complaint description"
+                    value={formData.description}
+                    onChange={handleChange}
+                ></textarea>
+                {errors.description && <p className="error">{errors.description}</p>}
+
+                <div className="button-group">
+                    <button
+                        type="button"
+                        onClick={() => navigate("/my-complaint")}
+                    >
+                        Cancel
+                    </button>
+                    <button type="submit">Submit Complaint</button>
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default ComplaintForm;
