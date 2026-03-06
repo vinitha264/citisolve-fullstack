@@ -1,6 +1,6 @@
 
  export const BASE_URL =
-    "https://citisolve-smarter-complaint-resolution.onrender.com/api";
+   "https://citisolve-fullstack-project.onrender.com";
 
 const callAPI = async (endpoint, options = {}) => {
     try {
