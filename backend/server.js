@@ -10,7 +10,7 @@ const app = express();
 const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://citisolve-fullstack-project-frontend.onrender.com" // production frontend
+    "https://citisolve-fullstack-frontend.onrender.com" // production frontend
 ];
 
 app.use(
