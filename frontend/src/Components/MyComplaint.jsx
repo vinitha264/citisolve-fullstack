@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./MyComplaint.css";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../services/API";
 
 const MyComplaint = () => {
     const navigate = useNavigate();
@@ -8,7 +9,7 @@ const MyComplaint = () => {
     const [statusFilter, setStatusFilter] = useState("All");
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/complaints")
+        fetch(`${BASE_URL}/api/complaints`, { credentials: "include" })
             .then((res) => res.json())
             .then((data) => setComplaints(data))
             .catch((err) => console.log("Error fetching complaints:", err));
@@ -22,9 +23,10 @@ const MyComplaint = () => {
 
         try {
             await fetch(
-                `http://localhost:5000/api/complaints/delete/${id}`,
+                `${BASE_URL}/api/complaints/${id}`,
                 {
                     method: "DELETE",
+                    credentials: "include",
                 }
             );
 
