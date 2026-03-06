@@ -1,4 +1,5 @@
-const BASE_URL =
+
+ export const BASE_URL =
     "https://citisolve-smarter-complaint-resolution.onrender.com/api";
 
 const callAPI = async (endpoint, options = {}) => {
