@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ComplaintForm.css";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../services/API";
 
 const ComplaintForm = () => {
     const navigate = useNavigate();
@@ -47,28 +48,26 @@ const ComplaintForm = () => {
         if (!validateForm()) return;
 
         try {
-            const response = await fetch(
-                "http://localhost:5000/api/complaints",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                }
-            );
+            const response = await fetch(`${BASE_URL}/api/complaints`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json().catch(() => ({}));
 
             if (!response.ok) {
-                throw new Error("Failed to submit complaint");
+                throw new Error(data.message || "Failed to submit complaint");
             }
 
             alert("Complaint Submitted Successfully!");
-
             navigate("/my-complaint");
-
         } catch (error) {
             console.error("Error:", error);
-            alert("Something went wrong!");
+            alert(error.message || "Something went wrong!");
         }
     }
 
@@ -81,6 +80,7 @@ const ComplaintForm = () => {
                 <input
                     type="text"
                     name="name"
+                    placeholder="Enter your name"
                     value={formData.name}
                     onChange={handleChange}
                 />
@@ -90,6 +90,7 @@ const ComplaintForm = () => {
                 <input
                     type="text"
                     name="ward"
+                    placeholder="Enter your ward"
                     value={formData.ward}
                     onChange={handleChange}
                 />
@@ -99,6 +100,7 @@ const ComplaintForm = () => {
                 <input
                     type="text"
                     name="location"
+                    placeholder="Enter location"
                     value={formData.location}
                     onChange={handleChange}
                 />
@@ -115,30 +117,4 @@ const ComplaintForm = () => {
                     <option value="Garbage Issue">Garbage Issue</option>
                     <option value="Water Issue">Water Issue</option>
                     <option value="Street Light Problem">Street Light Problem</option>
-                    <option value="Other">Other</option>
-                </select>
-                {errors.category && <p className="error">{errors.category}</p>}
-
-                <label>Description:</label>
-                <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                ></textarea>
-                {errors.description && <p className="error">{errors.description}</p>}
-
-                <div className="button-group">
-                    <button
-                        type="button"
-                        onClick={() => navigate("/my-complaint")}
-                    >
-                        Cancel
-                    </button>
-                    <button type="submit">Submit Complaint</button>
-                </div>
-            </form>
-        </div>
-    );
-};
-
-export default ComplaintForm;
+                    
